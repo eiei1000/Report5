@@ -1,16 +1,12 @@
 public class Main {
     public static void main(String[] args) {
-        // String型変数strにnullを代入
-        String str = null;
-
+        String str = "壱百満"; // 文字列を代入
         try {
-            // str.length()を呼び出し
-            System.out.println(str.length());
-        } catch (NullPointerException e) {
-            // NullPointerExceptionをキャッチ
-            System.out.println("NullPointerExceptionが発生しました。");
-            // エラーメッセージを表示
-            System.out.println("エラーメッセージ: " + e.getMessage());
+            int value = Integer.parseInt(str); // 変換を試みる
+            System.out.println(value); // 成功した場合、変換された値を出力
+        } catch (NumberFormatException e) {
+            System.out.println("NumberFormatExceptionが発生しました。"); // 例外発生時のメッセージ
+            System.out.println("エラーメッセージ: " + e.getMessage()); // 例外の詳細メッセージ
         }
     }
 }
