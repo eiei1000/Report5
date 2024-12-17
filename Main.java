@@ -1,7 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-        // ステップ1: NullPointerExceptionを発生させるコード
-        String str = null;
-        System.out.println(str.length()); // ここで NullPointerException が発生
+        String str = "壱百満"; // 文字列 "壱百満" を代入
+        try {
+            int value = Integer.parseInt(str); // ここで例外が発生
+            System.out.println(value);
+        } catch (NumberFormatException e) {
+            System.out.println("例外が発生しました: " + e.getMessage());
+        }
     }
 }
